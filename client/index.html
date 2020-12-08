@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Socket Demo</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+
+        <h5>Other Logins:</h5>
+        <a href="attendee.html" target="_blank">Attendee</a>
+        <a href="exhibitor.html" target="_blank">Exhibitor</a>
+        <a href="operator.html" target="_blank">Booth Operator</a>
+        <a href="speaker.html" target="_blank">Speaker</a>
+        <hr>
+
+        <p>Host: <b id="host"></b></p>
+        <p>Connection: <b id="cStatus">Connecting...</b></p>
+        <p>Role: <b id="role"></b></p>
+        <p>User: <b id="userId"></b></p>
+
+        <hr>
+
+        <form id="frmAnnouncement" method="POST">
+            <input type="checkbox" name="attendee" id="attendee" value="attendeeAnnouncement"> 
+            <label for="attendee">Attendee</label> <br>
+            <input type="checkbox" name="exhibitor" id="exhibitor" value="exhibitorAnnouncement"> 
+            <label for="exhibitor">Exhibitor</label> <br>
+            <input type="checkbox" name="operator" id="operator" value="operatorAnnouncement"> 
+            <label for="operator">Booth Operator</label> <br>
+            <input type="checkbox" name="speaker" id="speaker" value="speakerAnnouncement"> 
+            <label for="speaker">Speaker</label> <br>
+            <input type="checkbox" name="hosts" id="hosts" value="hostAnnouncement"> 
+            <label for="hosts">Host</label> <br><br>
+            <textarea id="message" name="message" placeholder="Enter Message" required></textarea><br>
+            <button type="submit" id="send">Send</button> 
+        </form>
+
+        <hr>
+
+        <h1>Announcements</h1>
+        <div id="announcement"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+        <script src="host.js"></script>
+
+    </body>
+
+</html>
